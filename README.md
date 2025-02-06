@@ -1,4 +1,7 @@
 # ASU ROAR Simulation
+## Dependencies
+[ROAR-Msgs](https://github.com/ASU-ROAR-Team/ROAR-Msgs)
+
 ## Setup
 ``` bash
 sudo apt install ros-noetic-urdf

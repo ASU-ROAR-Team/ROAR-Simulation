@@ -1,3 +1,0 @@
-<launch>
-  <node pkg="teleoperation" type="teleop.py" name="teleop_node" output="screen" />
-</launch>
