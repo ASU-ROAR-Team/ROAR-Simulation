@@ -1,5 +1,5 @@
 <package format="2">
-  <name>roar-simulation</name>
+  <name>roar_simulation</name>
   <version>1.0.0</version>
   <description>
     <p>Simulation envirnoment for ROAR Rover</p>
