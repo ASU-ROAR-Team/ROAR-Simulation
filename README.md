@@ -14,3 +14,13 @@ sudo apt install ros-noetic-robot-state-publisher
 roslaunch roar gazebo.launch
 roslaunch roar display.launch
 ```
+
+## Published Topics
+### IMU
+`/imu` ([sensor_msgs/imu](http://docs.ros.org/en/api/sensor_msgs/html/msg/Imu.html))
+
+### Encoders
+`/joint_states` ([sensor_msgs/JointState](http://docs.ros.org/en/api/sensor_msgs/html/msg/JointStates.html))
+
+### GPS
+`/gps` ([sensor_msgs/NavSatFix](http://docs.ros.org/en/api/sensor_msgs/html/msg/NavSatFix.html))
