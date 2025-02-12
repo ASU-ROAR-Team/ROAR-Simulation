@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<robot name="roar">
+<robot name="roar_simulation">
   <link name="base_link">
     <inertial>
       <origin xyz="0.00469098688936509 -0.0777682848151969 0.324101627417335" rpy="0 0 0" />
@@ -322,7 +322,7 @@
   <!-- ROS Control plugin for Gazebo-->
   <gazebo>
     <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so"/>
-    <!-- <robotNamespace>/roar_simulation</robotNamespace> -->
+      <robotNamespace>/</robotNamespace>
   </gazebo>
 
   <!--transmission-->

@@ -10,6 +10,7 @@ find_package(catkin REQUIRED
 	geometry_msgs
 	urdf
 	xacro
+	roar_msgs
 )
 
 
@@ -19,9 +20,14 @@ CATKIN_DEPENDS
 	roscpp
 	rospy
 	std_msgs
+	roar_msgs
 )
 
 find_package(roslaunch)
+
+catkin_install_python(PROGRAMS src/teleop.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
 
 foreach(dir config launch meshes urdf)
 	install(DIRECTORY ${dir}/

@@ -8,12 +8,13 @@ sudo apt install ros-noetic-urdf
 sudo apt install ros-noetic-hector-gazebo-plugins
 sudo apt install ros-noetic-robot-state-publisher
 sudo apt install ros-noetic-controller-manager
+sudo apt-get install ros-noetic-gazebo-ros-pkgs 
+sudo apt-get install ros-noetic-gazebo-ros-control
 ```
 
 ## Running
 ``` bash 
-roslaunch roar gazebo.launch
-roslaunch roar display.launch
+roslaunch roar spawn.launch
 ```
 
 ## Published Topics

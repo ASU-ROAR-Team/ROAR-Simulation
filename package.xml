@@ -20,6 +20,7 @@ for ROAR Rover</p>
   <build_depend>std_msgs</build_depend>
   <build_depend>message_generation</build_depend>
   <depend>roslaunch</depend>
+  <depend>roar_msgs</depend>
   <depend>robot_state_publisher</depend>
   <depend>joint_state_publisher_gui</depend>
   <depend>rviz</depend>
