@@ -14,7 +14,7 @@ class ControlApp(Tk, object):
         self.mainloop()
 
     def initNode(self) -> None:
-        rospy.initNode("teleop_node")
+        rospy.init_node("teleop_node")
         self.velocitylfPublisher = rospy.Publisher('/wheel_lhs_front_velocity_controller/command', Float64, queue_size=10)
         self.velocityrfPublisher = rospy.Publisher('/wheel_rhs_front_velocity_controller/command', Float64, queue_size=10)
         self.velocitylrPublisher = rospy.Publisher('/wheel_lhs_rear_velocity_controller/command', Float64, queue_size=10)
