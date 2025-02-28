@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<sdf version="1.4">
+  <world name="mars_yard">
+     <physics type="ode">
+      <ode>
+        <solver>
+          <!-- IMPORTANT for skid steering to properly work -->
+          <friction_model>cone_model</friction_model>
+
+          <island_threads>6</island_threads>
+        </solver>
+      </ode>
+    </physics>
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    <model name="my_mesh">
+      <pose>0 0 0  0 0 0</pose>
+      <static>true</static>
+      <link name="body">
+        <visual name="visual">
+          <geometry>
+            <mesh><uri>model://texturedMeshMarsYard24.dae</uri></mesh>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+  </world>
+</sdf>
