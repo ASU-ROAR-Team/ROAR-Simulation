@@ -1,4 +1,5 @@
 <launch>
+    <env name="GAZEBO_MODEL_PATH" value="$(find roar_simulation)/Mars_yard_2024"/>
     <!-- Launch empty world in gazebo -->
     <include file="$(find gazebo_ros)/launch/empty_world.launch" >
         <arg name="world_name" value="$(find roar_simulation)/Mars_yard_2024/mars_yard.world"/>

@@ -6,7 +6,6 @@
         <solver>
           <!-- IMPORTANT for skid steering to properly work -->
           <friction_model>cone_model</friction_model>
-
           <island_threads>6</island_threads>
         </solver>
       </ode>
@@ -20,9 +19,14 @@
       <link name="body">
         <visual name="visual">
           <geometry>
-            <mesh><uri>model://texturedMeshMarsYard24.dae</uri></mesh>
+            <mesh><uri>model://marsYardVanilla.dae</uri></mesh>
           </geometry>
         </visual>
+        <collision name="collision">
+          <geometry>
+            <mesh><uri>model://marsYardVanilla.dae</uri></mesh>
+          </geometry>
+        </collision>
       </link>
     </model>
   </world>
