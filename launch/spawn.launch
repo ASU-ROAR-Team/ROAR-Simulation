@@ -1,6 +1,8 @@
 <launch>
     <!-- Launch empty world in gazebo -->
-    <include file="$(find gazebo_ros)/launch/empty_world.launch" />
+    <include file="$(find gazebo_ros)/launch/empty_world.launch" >
+        <arg name="verbose" value="true"/>
+    </include>
 
     <!-- Define robot_description -->
     <param name="robot_description" textfile="$(find roar_simulation)/urdf/roar.urdf" />

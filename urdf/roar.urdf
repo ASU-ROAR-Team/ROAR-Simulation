@@ -386,6 +386,8 @@
     </actuator>
   </transmission>
 
+   <!-- Adding imu sensor from hector_gazebo_plugin-->
+
   <gazebo>
     <plugin name="imu_plugin" filename="libgazebo_ros_imu.so">
       <alwaysOn>true</alwaysOn>
@@ -411,7 +413,7 @@
       <velocityGaussianNoise>0.1 0.1 0.1</velocityGaussianNoise>
     </plugin>
   </gazebo>
-
+   <!-- Adding magnetometer sensor from hector_gazebo_plugin-->
   <gazebo>
     <plugin name="magnetometer" filename="libhector_gazebo_ros_magnetic.so">
       <updateRate>20.0</updateRate>
@@ -424,6 +426,52 @@
       <driftFrequency>0 0 0</driftFrequency>
       <gaussianNoise>0 0 0</gaussianNoise>
     </plugin>
+  </gazebo>
+   <!-- Adding depth camer sensor-->
+   <link name = "camera_link">
+   </link>
+   <joint name="camera_joint" type="fixed">
+    <origin xyz="0 0.3 0.35" rpy="0 0 1.570796" />
+    <parent link="base_link" />
+    <child link="camera_link" />
+  </joint>
+  <link name = "camera_optical_frame"/>
+  <joint name="camera_optical_frame_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="-1.570796 0 -1.570796" />
+    <parent link="camera_link" />
+    <child link="camera_optical_frame" />
+  </joint>
+  <gazebo reference ="camera_link">
+  <sensor type="depth" name="camera">
+   <pose>0 0 0 0 0 0</pose>
+   <update_rate>30 </update_rate>
+    <camera name="camera">
+      <horizontal_fov>1.91986</horizontal_fov>
+      <image>
+        <width>2688</width>
+        <height>1520</height>
+        <format>R8G8B8</format>
+      </image>
+      <clip>
+        <near>0.3</near>
+        <far>20</far>
+      </clip>
+    </camera>
+      <plugin name="camera_plugin" filename="libgazebo_ros_depth_camera.so">
+      <always_on>true</always_on>
+      <update_rate>30</update_rate>
+      <frame_name>camera_optical_frame</frame_name>
+      <max_depth>20</max_depth>
+      <min_depth>0.3</min_depth>
+      <pointCloudCutoff>0.05</pointCloudCutoff>
+      <pointCloudCutoffMax>20</pointCloudCutoffMax>
+      <imageTopicName>/camera/color/image_raw</imageTopicName>
+      <cameraInfoTopicName>/camera/color/camera_info</cameraInfoTopicName>
+      <depthImageTopicName>/camera/depth/image_raw</depthImageTopicName>
+      <depthImageCameraInfoTopicName>/camera/depth/camera_info</depthImageCameraInfoTopicName>
+      <pointCloudTopicName>/camera/depth/points</pointCloudTopicName>
+    </plugin>
+   </sensor>
   </gazebo>
 
 </robot>

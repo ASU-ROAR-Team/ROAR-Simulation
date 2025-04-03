@@ -1,0 +1,14 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/nabil_fouda/roar_25_ws/devel/lib/python3/dist-packages",
+        "/home/nabil_fouda/roar_ws/devel/lib/python3/dist-packages",
+        "/home/nabil_fouda/catkin_ws/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/nabil_fouda/roar_25_ws/devel/lib/python3/dist-packages",
+        "/home/nabil_fouda/roar_ws/devel/lib/python3/dist-packages",
+        "/home/nabil_fouda/catkin_ws/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages"
+    ]
+}
