@@ -11,6 +11,17 @@ sudo apt install ros-noetic-controller-manager
 sudo apt-get install ros-noetic-gazebo-ros-pkgs 
 sudo apt-get install ros-noetic-gazebo-ros-control
 ```
+## To pull mars_yard
+``` bash
+curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+sudo apt-get update
+sudo apt-get install git-lfs
+```
+Then go to the repositries directory and type:
+```
+git lfs install
+git lfs pull
+```
 
 ## Running
 ``` bash 
