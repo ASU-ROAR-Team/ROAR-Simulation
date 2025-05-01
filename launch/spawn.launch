@@ -2,6 +2,7 @@
     <!-- Launch empty world in gazebo -->
     <include file="$(find gazebo_ros)/launch/empty_world.launch" >
         <arg name="verbose" value="true"/>
+        <arg name="world_name" value="$(find roar_simulation)/worlds/test.world"/>
     </include>
 
     <!-- Define robot_description -->
