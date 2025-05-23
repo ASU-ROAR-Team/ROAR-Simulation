@@ -10,6 +10,7 @@ sudo apt install ros-noetic-robot-state-publisher
 sudo apt install ros-noetic-controller-manager
 sudo apt-get install ros-noetic-gazebo-ros-pkgs 
 sudo apt-get install ros-noetic-gazebo-ros-control
+sudo apt-get install ros-noetic-ros-controllers
 ```
 ## To pull mars_yard
 ``` bash
