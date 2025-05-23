@@ -17,8 +17,14 @@
     <!-- Load the controllers with namespace -->
     <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="joint_state_controller wheel_lhs_front_velocity_controller wheel_lhs_mid_velocity_controller wheel_lhs_rear_velocity_controller wheel_rhs_front_velocity_controller wheel_rhs_mid_velocity_controller wheel_rhs_rear_velocity_controller  --timeout 500" />
 
+    <!-- Start the robot state publisher - THIS WAS MISSING -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
     <!-- Start the joint state publisher -->
     <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+
+    <!-- Start the ground truth TF broadcaster -->
+    <node pkg="roar_simulation" type="ground_truth_tf_broadcaster.py" name="ground_truth_tf_broadcaster" output="screen" />
 
     <!-- Start the teleoperation node-->
     <node pkg="roar_simulation" type="teleop.py" name="teleop_node" output="screen" />
