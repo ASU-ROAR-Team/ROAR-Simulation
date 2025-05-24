@@ -1,15 +1,13 @@
 <launch>
     <!-- Launch empty world in gazebo -->
-    <include file="$(find gazebo_ros)/launch/empty_world.launch" >
-        <arg name="verbose" value="true"/>
-        <arg name="world_name" value="$(find roar_simulation)/worlds/test.world"/>
-    </include>
-
+    <include file="$(find gazebo_ros)/launch/empty_world.launch"/> 
+    
+   
     <!-- Define robot_description -->
     <param name="robot_description" textfile="$(find roar_simulation)/urdf/roar.urdf" />
 
     <!-- Spawn the robot in gazebo -->
-    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" output="screen" args="-urdf -model roar -param robot_description -x 0 -y 0 -z 1 -Y -1.5708" />
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" output="screen" args="-urdf -model roar -param robot_description -x 11.5 -y 17.25 -z 1 -Y -1.5708" />
 
     <!-- Load joint controller configurations from YAML file to parameter server -->
     <rosparam file="$(find roar_simulation)/config/Controllers.yaml" command="load" ns="/"/>
