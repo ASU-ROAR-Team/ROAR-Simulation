@@ -465,7 +465,7 @@
       <bodyName>base_link</bodyName>
       <topicName>gps</topicName>
       <velocityTopicName>fix_velocity</velocityTopicName>
-      <drift>5.0 5.0 5.0</drift>
+      <drift>1.0 1.0 1.0</drift>
       <gaussianNoise>0.1 0.1 0.1</gaussianNoise>
       <velocityDrift>0 0 0</velocityDrift>
       <velocityGaussianNoise>0.1 0.1 0.1</velocityGaussianNoise>
