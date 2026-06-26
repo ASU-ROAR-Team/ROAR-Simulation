@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<robot name="rock" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find rock_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find rock_description)/urdf/rock.ros2control" />
+<xacro:include filename="$(find rock_description)/urdf/rock.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-4.242688827500729e-07 -8.322865359872923e-07 -0.010491987425638356" rpy="0 0 0"/>
+    <mass value="0.0360517207407526"/>
+    <inertia ixx="2e-06" iyy="4e-06" izz="3e-06" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find rock_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find rock_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+</robot>
