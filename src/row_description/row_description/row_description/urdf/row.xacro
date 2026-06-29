@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+<robot name="row" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<!-- <xacro:include filename="$(find row_description)/urdf/materials.xacro" />  color defined in main xacro now-->
+<xacro:include filename="$(find row_description)/urdf/row.ros2control" />
+<xacro:include filename="$(find row_description)/urdf/row.gazebo" />
+<xacro:macro name="row" params="name parent x y z">
+  <link name="${name}_base_link">
+    <inertial>
+      <origin xyz="-0.16201301875104993 0.06456901134738892 0.03179404966626043" rpy="0 0 0"/>
+      <mass value="0.6099870608035496"/>
+      <inertia ixx="0.000499" iyy="0.000338" izz="0.000195" ixy="0.0" iyz="8e-06" ixz="-0.0"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find row_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    <material name="dark_grey"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find row_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="${name}_row_link">
+  <inertial>
+    <origin xyz="1.4710455076283324e-14 0.0009733874323540892 0.0007649973025304624" rpy="0 0 0"/>
+    <mass value="0.013363655759233381"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.162 -0.095002 -0.039298" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find row_description)/meshes/row_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="dark_grey"/>
+  </visual>
+  <collision>
+    <origin xyz="0.162 -0.095002 -0.039298" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find row_description)/meshes/row_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="${name}_revolute" type="revolute">
+  <origin xyz="-0.162 0.095002 0.039298" rpy="0 0 0"/>
+  <parent link="${name}_base_link"/>
+  <child link="${name}_row_link"/>
+  <axis xyz="1.0 0.0 0.0"/>
+  <limit upper="0.0" lower="-1.047198" effort="100" velocity="100"/>
+</joint>
+</xacro:macro>
+</robot>
