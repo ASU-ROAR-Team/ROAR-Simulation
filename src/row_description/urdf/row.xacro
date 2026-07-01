@@ -32,7 +32,7 @@
   <inertial>
     <origin xyz="-4.057487931493324e-07 0.0003920169114006583 -0.004603424306532057" rpy="0 0 0"/>
     <mass value="0.00434807010112859"/>
-    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
+    <inertia ixx="2e-06" iyy="2e-06" izz="1e-06" ixy="-0.0" iyz="0.0" ixz="-0.0"/> <!-- copied from switch-->
   </inertial>
   <visual>
     <origin xyz="-5.6e-05 -0.017761 0.008932" rpy="0 0 0"/>
