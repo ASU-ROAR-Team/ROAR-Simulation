@@ -10,16 +10,17 @@
   <xacro:include filename="$(find switch_description)/urdf/rotary_control.xacro"/>
 
   <!-- world anchor -->
-  <link name="world"/>
+<!--  <link name="world"/>
+commented world link so it would fall down in gazebo -->
 
   <!-- panel base -->
    <xacro:include filename="$(find panel_body_description)/urdf/panel_body.xacro"/>
  <!-- attach panel base to world -->
-   <joint name="world_to_panel" type="fixed">
+<!--   <joint name="world_to_panel" type="fixed">
   <parent link="world"/>
   <child link="panel_base_link"/>
   <origin xyz="0 0.0 0" rpy="0 0 0"/>
-</joint>
+</joint> -->
 <link name="panel_face"/>
 
 <joint name="panel_to_face" type="fixed"> <!--Added this to attach switches directly to the tilted panel face-->
